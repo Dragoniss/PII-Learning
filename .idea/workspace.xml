@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="690ecd8e-af81-4917-99ce-60a8ee46c550" name="Default Changelist" comment="ADD MORE DATASET CLEANED&amp;PCFG">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="690ecd8e-af81-4917-99ce-60a8ee46c550" name="Default Changelist" comment="ADD MORE DATASET CLEANED&amp;PCFG" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,12 +26,17 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../PII-Learning" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/PII-Learning" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\pythonProject\PII-Learning\PII-Learning" />
+    </key>
   </component>
   <component name="RunManager" selected="Python.dodonew (1)">
     <configuration name="12306" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -178,6 +181,7 @@
       <workItem from="1642950773924" duration="3508000" />
       <workItem from="1642954648479" duration="254000" />
       <workItem from="1643096064461" duration="667000" />
+      <workItem from="1643262108539" duration="45000" />
     </task>
     <task id="LOCAL-00001" summary="add main">
       <created>1642314508856</created>
@@ -221,7 +225,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642953706257</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="ADD MORE DATASET CLEANED&amp;PCFG">
+      <created>1643262125275</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1643262125275</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
