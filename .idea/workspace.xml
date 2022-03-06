@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="690ecd8e-af81-4917-99ce-60a8ee46c550" name="Default Changelist" comment="ADD MORE DATASET CLEANED&amp;PCFG" />
+    <list default="true" id="690ecd8e-af81-4917-99ce-60a8ee46c550" name="Default Changelist" comment="ADD PCFG Learning">
+      <change afterPath="$PROJECT_DIR$/.idea/other.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PII-Learning(with_PCFG)/.idea/PII-Learning(with_PCFG).iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PII_Learning(Transformer)/preprocess.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Transformer/Constants.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Transformer/Layers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Transformer/Models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Transformer/Modules.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Transformer/Optim.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Transformer/SubLayers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Transformer/Transformer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Transformer/d2ltrans.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PII-Learning/pre_process.py" beforeDir="false" afterPath="$PROJECT_DIR$/PII-Learning/pre_process.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,6 +34,20 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Transformer/Transformer.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Transformer/d2ltrans.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Roaming/Python/Python38/site-packages/d2l/torch.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/PIIrec/p.py" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="ProjectId" id="23lerNAmOYSsfINBtBIquJ91nfK" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -25,42 +56,26 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/PII-Learning" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\pythonProject\PII-Learning\Transformer" />
+      <recent name="D:\pythonProject\PII-Learning\PII-Learning(with_PCFG)" />
       <recent name="D:\pythonProject\PII-Learning\PII-Learning" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\pythonProject\PII-Learning\Transformer" />
+    </key>
   </component>
-  <component name="RunManager" selected="Python.dodonew (1)">
-    <configuration name="12306" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="guochuang" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/PIIrec" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/PIIrec/12306.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.d2ltrans">
     <configuration name="CSDN (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="guochuang" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -83,7 +98,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="CSDN" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Transformer" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="guochuang" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -91,12 +106,34 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Preprocessing" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Transformer" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Preprocessing/CSDN.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Transformer/Transformer.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="d2ltrans" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="guochuang" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Transformer" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Transformer/d2ltrans.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -151,11 +188,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.d2ltrans" />
+        <item itemvalue="Python.Transformer" />
         <item itemvalue="Python.dodonew (1)" />
         <item itemvalue="Python.dodonew" />
         <item itemvalue="Python.CSDN (1)" />
-        <item itemvalue="Python.CSDN" />
-        <item itemvalue="Python.12306" />
       </list>
     </recent_temporary>
   </component>
@@ -182,6 +219,26 @@
       <workItem from="1642954648479" duration="254000" />
       <workItem from="1643096064461" duration="667000" />
       <workItem from="1643262108539" duration="45000" />
+      <workItem from="1644115361535" duration="1301000" />
+      <workItem from="1644211578677" duration="330000" />
+      <workItem from="1644735700953" duration="957000" />
+      <workItem from="1644825532107" duration="88000" />
+      <workItem from="1645444907413" duration="2363000" />
+      <workItem from="1645547993830" duration="590000" />
+      <workItem from="1645598123240" duration="13000" />
+      <workItem from="1645598150903" duration="720000" />
+      <workItem from="1645615969964" duration="18387000" />
+      <workItem from="1645672177381" duration="4550000" />
+      <workItem from="1645686140457" duration="6562000" />
+      <workItem from="1645693054003" duration="8000" />
+      <workItem from="1645693409480" duration="621000" />
+      <workItem from="1645705210571" duration="6386000" />
+      <workItem from="1645716584713" duration="144000" />
+      <workItem from="1645758683185" duration="6000" />
+      <workItem from="1645941666196" duration="6138000" />
+      <workItem from="1645966922863" duration="1234000" />
+      <workItem from="1646287888406" duration="243000" />
+      <workItem from="1646531048235" duration="376000" />
     </task>
     <task id="LOCAL-00001" summary="add main">
       <created>1642314508856</created>
@@ -232,7 +289,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643262125275</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="ADD PCFG Learning">
+      <created>1644115445890</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1644115445890</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -256,17 +320,20 @@
     <MESSAGE value="Trans To PCFG" />
     <MESSAGE value="ADD SOME RULES" />
     <MESSAGE value="ADD MORE DATASET CLEANED&amp;PCFG" />
-    <option name="LAST_COMMIT_MESSAGE" value="ADD MORE DATASET CLEANED&amp;PCFG" />
+    <MESSAGE value="ADD PCFG Learning" />
+    <option name="LAST_COMMIT_MESSAGE" value="ADD PCFG Learning" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/guochuang$CSDN__1_.coverage" NAME="CSDN (1) Coverage Results" MODIFIED="1642952620612" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PIIrec" />
-    <SUITE FILE_PATH="coverage/PII_Learning$dodonew__1_.coverage" NAME="dodonew (1) Coverage Results" MODIFIED="1643096123971" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PIIrec" />
+    <SUITE FILE_PATH="coverage/PII_Learning$dodonew__1_.coverage" NAME="dodonew (1) Coverage Results" MODIFIED="1645616828658" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PIIrec" />
     <SUITE FILE_PATH="coverage/guochuang$dodonew__1_.coverage" NAME="dodonew (1) Coverage Results" MODIFIED="1642953581883" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PIIrec" />
     <SUITE FILE_PATH="coverage/guochuang$dodonew.coverage" NAME="dodonew Coverage Results" MODIFIED="1642953368228" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Preprocessing" />
     <SUITE FILE_PATH="coverage/guochuang$p__1_.coverage" NAME="p (1) Coverage Results" MODIFIED="1642572583019" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PIIrec" />
+    <SUITE FILE_PATH="coverage/PII_Learning$d2ltrans.coverage" NAME="d2ltrans Coverage Results" MODIFIED="1645967567034" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Transformer" />
     <SUITE FILE_PATH="coverage/guochuang$test.coverage" NAME="test Coverage Results" MODIFIED="1642840861386" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Prosessing" />
     <SUITE FILE_PATH="coverage/guochuang$p.coverage" NAME="p Coverage Results" MODIFIED="1642410982364" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/guochuang$CSDN.coverage" NAME="CSDN Coverage Results" MODIFIED="1642952614151" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Preprocessing" />
     <SUITE FILE_PATH="coverage/guochuang$12306.coverage" NAME="12306 Coverage Results" MODIFIED="1642850348477" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PIIrec" />
+    <SUITE FILE_PATH="coverage/PII_Learning$Transformer.coverage" NAME="Transformer Coverage Results" MODIFIED="1645942707095" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Transformer" />
   </component>
 </project>

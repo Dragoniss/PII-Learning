@@ -31,13 +31,16 @@ def encode_PII(usage):
     PII=read_file('data/clean_PII.csv')
     all_characters = string.printable
     n_characters = len(all_characters)
+    #编码code['a']=1
     code = {}
     for index, letter in enumerate(all_characters):
         code[letter] = index
     code[start_word] = n_characters
     code[end_word] = n_characters + 1
 
+    #batch个数
     num_batches=int(np.ceil(len(PII)/float(batch_size)))
+
     print('Find out the max size of PII...')
     maxlen=0
     for datum in PII:
@@ -46,9 +49,7 @@ def encode_PII(usage):
 
     print('The maxsize of PII is %d'%(maxlen))
 
-
-
-
+    #把PII映射成索引
     print('encoding {} PIIs...'.format(usage))
     for idx in tqdm(range(num_batches)):
         i=idx*batch_size
@@ -69,6 +70,7 @@ def build_samples(usage):
     password=read_file('data/clean_password.csv')
     all_characters = string.printable
     n_characters = len(all_characters)
+    # 编码code['a']=1
     code = {}
     for index, letter in enumerate(all_characters):
         code[letter] = index
@@ -76,6 +78,7 @@ def build_samples(usage):
     code[end_word] = n_characters + 1
 
     samples=[]
+
     print('Generating Sample...')
     for i in range(len(password)):
         PII_id=i
