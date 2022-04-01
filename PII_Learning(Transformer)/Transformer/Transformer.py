@@ -270,8 +270,7 @@ class Decoder(nn.Module):
         self.dense=nn.Linear(num_hiddens,vocab_size)
 
     def init_state(self,encode_output,encode_mask=None):
-        return [encode_output,encode_mask,[None]*self.num_layers
-                ]
+        return [encode_output,encode_mask,[None]*self.num_layers]
     def forward(self,X,state):
         X=self.pos_encoding(self.embedding(X)*math.sqrt(self.num_hiddens))
         #存attention_weight方便可视化

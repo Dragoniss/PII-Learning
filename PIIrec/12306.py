@@ -2,7 +2,7 @@ import chardet
 import pandas as pd
 import re
 dir='F:\PII Research\Dataset\PII_Dataset\clean\\'
-dataFileName=dir+"12306_cleaned.csv"
+dataFileName=dir+"12306_clean_data.txt"
 # dataFileName="\clean_data.csv"
 output=dir+"Recognize_data.csv"
 pcfg_password_file=dir+'12306_pcfg_format_password.csv'
@@ -25,7 +25,7 @@ def read_file(filename):
     passwords=[]
     with open(filename,'r') as f:
         for line in f.readlines():
-            temp = line.split(',')
+            temp = line.split('\t')
             if len(temp)>9: #invalid item
                 continue
             else:
@@ -93,15 +93,17 @@ if __name__=="__main__":
         if i%100000==0:
             print('Recognize %d...\n'%i)
         # print(PII)
-        username=PII[3]
-        name=str(PII[1]).split('|')
+        username=PII[0]
+        name=str(PII[2]).split('|')
         birth=[]
-        if len(PII[5])==8:
-            birth = [PII[5][0:4],PII[5][4:6],PII[5][6:]]
+        if PII[3]!='':
+            PII[3]=str(int(float(PII[3])))
+        if len(PII[3])==8:
+            birth = [PII[3][0:4],PII[3][4:6],PII[3][6:]]
         # print(birth)
         phone = PII[4]
-        ID=PII[2]
-        email=str(PII[0]).split('@')
+        ID=PII[5]
+        email=str(PII[1]).split('@')
         #Username
         if username.lower() in str(passwords[i]).lower():
             reg = re.compile(re.escape(username), re.IGNORECASE)

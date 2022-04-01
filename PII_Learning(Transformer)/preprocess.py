@@ -4,6 +4,7 @@ import nltk
 import re
 import torch
 import wordninja
+import numpy as np
 from d2l import torch as d2l
 from Transformer import Transformer
 def read_psw(filename):
@@ -50,10 +51,11 @@ def cutword(sent):
     for word in cut_sent:
         cut_after_ninja+=wordninja.split(word)
 
-    print("cut",cut_sent)
-    print("cut_after_ninja",cut_after_ninja)
 
-
+    # print("cut",cut_sent,"    cut_after_ninja",cut_after_ninja)
+    line=" ".join(cut_sent)+","+" ".join(cut_after_ninja)
+    with open("data/cut_word_vs_ninja.csv","a") as f:
+        f.write(line+"\n")
     return cut_sent
 def make_username(username):
     #print(username)
@@ -113,7 +115,7 @@ def load_data(data):
     target=[]
     PII=[]
     print("get dict...")
-    num=6000
+    num=600
     for i,datum in enumerate(data):
         if i>num:
             break
@@ -127,7 +129,7 @@ def load_data(data):
         target.append(password)
         # print('username:',username,' email:',email,' name:',name," birth:",birth,' password:',password)
     print("Building Vocab...")
-    src_vocab = d2l.Vocab(source, min_freq=2,
+    src_vocab = d2l.Vocab(source, min_freq=1,
                           reserved_tokens=['<pad>', '<bos>', '<eos>'])
 
 
@@ -144,19 +146,9 @@ def load_data(data):
         pickle.dump((data_iter,src_vocab),file)
     return data_iter,src_vocab,PII
 
-if __name__=='__main__':
-
-    print(torch.cuda.is_available())
-    preprocess_data="/data/iter_vocab.p"
-    train_iter=None
-    src_vocab=None
-    data = read_psw('../data/pcfg_format_password+password.csv')
-    train_iter,src_vocab,PIIs=load_data(data)
-    print(PIIs)
-    tgt_vocab=src_vocab
-
-    num_hiddens, num_layers, dropout, batch_size, num_steps = 32, 2, 0.1, 64, 30
-    lr, num_epochs, device = 0.005, 30, d2l.try_gpu()
+def train():
+    num_hiddens, num_layers, dropout, batch_size, num_steps = 32, 2, 0.1, 64, 24
+    lr, num_epochs, device = 0.002, 150, d2l.try_gpu()
     ffn_num_input, ffn_num_hiddens, num_heads = 32, 64, 4
     key_size, query_size, value_size = 32, 32, 32
     norm_shape = [32]
@@ -170,5 +162,98 @@ if __name__=='__main__':
                     ffn_num_input,ffn_num_hiddens,num_heads,num_layers,dropout)
     transformer=Transformer.EncoderDecoder(encoder,decoder)
     d2l.train_seq2seq(transformer,train_iter,lr,num_epochs,tgt_vocab,device)
-    pred,_=d2l.predict_seq2seq(transformer,PIIs[0:5],src_vocab,tgt_vocab,num_steps,device)
-    print(zip(PIIs[0:5],pred))
+    torch.save(transformer,"Model/600_epoch_30-v1.0")
+
+def top_k(array,k):
+    """
+    返回前K大的索引
+    """
+    array = [np.exp(a) for a in array]
+    tot = np.sum(array)
+    array = [a/tot for a in array]
+    index_array = [[i,array[i]] for i in range(len(array))]
+
+    index_array.sort(key = lambda k:k[1],reverse=True)
+    # print(index_array)
+    return index_array[:k]
+
+def guess():
+    return
+def predict(net, src_sentence, src_vocab, tgt_vocab, num_steps,
+                    device, save_attention_weights=False):
+    """Predict for sequence to sequence.
+
+    Defined in :numref:`sec_seq2seq_training`"""
+    # Set `net` to eval mode for inference
+    net.eval()
+    src_tokens = src_vocab[src_sentence.lower().split(' ')] + [
+        src_vocab['<eos>']]
+    enc_valid_len = torch.tensor([len(src_tokens)], device=device)
+    src_tokens = d2l.truncate_pad(src_tokens, num_steps, src_vocab['<pad>'])
+    # Add the batch axis
+    enc_X = torch.unsqueeze(
+        torch.tensor(src_tokens, dtype=torch.long, device=device), dim=0)
+    enc_outputs = net.encoder(enc_X, enc_valid_len)
+
+    candidate_list = {}
+
+    def generate_candidate(generate_list,psw_len,num_steps , dec_state, dec_X, k=5):
+        if generate_list[1]<1e-10:
+            return
+        if num_steps == 0:
+            candidate_list[' '.join(tgt_vocab.to_tokens(generate_list[0]))] = generate_list[1]
+        Y, dec_state = net.decoder(dec_X, dec_state)
+        top_list = top_k(Y.detach().numpy()[0][0], k)
+        for top in top_list:
+            token = tgt_vocab.idx_to_token[top[0]]
+            if top[0] == tgt_vocab['<eos>'] or len(token)> psw_len:
+                psw = ' '.join(generate_list[0])
+                if psw in candidate_list:
+                    candidate_list[psw] += generate_list[1]
+                else:
+                    candidate_list[psw] = generate_list[1]
+                    # print(f"ADD candiate:{psw}:{generate_list[1]}")
+                continue
+
+            dec_X = torch.tensor([[top[0]]])
+            generate_list[0].append(token)
+            generate_list[1]*=top[1]
+            psw_len-=len(token)
+            generate_candidate(generate_list,psw_len,num_steps-1,dec_state,dec_X,k=5)
+            psw_len+=len(token)
+            generate_list[0].pop()
+            generate_list[1]/=top[1]
+        return
+    dec_state = net.decoder.init_state(enc_outputs, enc_valid_len)
+    # Add the batch axis
+    dec_X = torch.unsqueeze(torch.tensor(
+        [tgt_vocab['<bos>']], dtype=torch.long, device=device), dim=0)
+
+    generate_candidate([[],1],16,num_steps,dec_state,dec_X,k=3)
+    candidate_list = sorted(candidate_list.items(),key = lambda x:(x[1],x[0]),reverse=True)
+    return candidate_list
+
+
+if __name__=='__main__':
+
+    print(torch.cuda.is_available())
+    preprocess_data="/data/iter_vocab.p"
+    train_iter=None
+    src_vocab=None
+    data = read_psw('../data/pcfg_format_password+password.csv')
+    train_iter,src_vocab,PIIs=load_data(data)
+    # print(PIIs)
+    tgt_vocab=src_vocab
+    num_hiddens, num_layers, dropout, batch_size, num_steps = 32, 2, 0.1, 64, 30
+    device = d2l.try_gpu()
+    # train()
+    transformer = torch.load("Model/600_epoch_30-v1.0")
+    for PII in PIIs[0:2]:
+        candidate_list = predict(transformer," ".join(PII),src_vocab,tgt_vocab,num_steps,device)
+        print(f"PII: {PII}")
+        i = 0
+        for key in candidate_list:
+            print(i,": ",key,end=" ")
+            if i%5 == 0:
+                print("")
+            i+=1
